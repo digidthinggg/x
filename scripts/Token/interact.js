@@ -20,7 +20,7 @@ async function main() {
   console.log(number)
   */
 
-  await contract.setProxyAddress(PROXY_CONTRACT_ADDRESS)
+  // await contract.setProxyAddress(PROXY_CONTRACT_ADDRESS)
 
   /*
   const proxyAddress = await contract.getProxyAddress()
@@ -28,12 +28,16 @@ async function main() {
   console.log(proxyAddress)
   */
 
-  await contract.simulateTransfer()
+  // await contract.simulateTransfer()
 }
 
 main().catch(error => {
   console.log(error)
   process.exitCode = 1
+})
+
+contract.on("Mint", () => {
+  console.log("EVENT Token: Mint");
 })
 
 contract.on("SimulateTransfer", () => {

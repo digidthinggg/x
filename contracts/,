@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.7;
+
+contract Wallet {
+  event StartTransfer();
+  event Receive();
+
+  struct Transfer {
+    address recipient;
+    uint amount;
+    bytes data;
+    bool executed;
+
+    // uint numConfirmations;
+  }
+
+  Transfer[] public transfers;
+
+  receive() external payable {
+    emit Receive();
+    // emit Receive(msg.sender
+  }
+
+  function startTransfer() external {
+    emit StartTransfer();
+  }
+
+  function mintSmartTokensForTokens() private virtual {
+    emit MintSmartTokensForTokens();
+  }
+}

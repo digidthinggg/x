@@ -2,6 +2,6 @@
 
 pragma solidity ^0.8.7;
 
-interface IProxy {
-  function startTransfer() external;
+interface IToken {
+  function mint() external;
 }

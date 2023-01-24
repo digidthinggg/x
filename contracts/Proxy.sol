@@ -22,8 +22,6 @@ contract Proxy {
   }
 
   function startTransfer() external {
-    //IWallet(walletAddr).startTransfer();
-    //IWallet(0x95201981C4023B84F2967aB569364E3484422137).startTransfer();
     IWallet(walletAddr).startTransfer();
     emit StartTransfer();
   }

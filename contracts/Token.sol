@@ -8,6 +8,7 @@ import "./interfaces/IProxy.sol";
 
 contract Token is ERC20 {
   event SimulateTransfer();
+  event Mint();
 
   uint constant _initial_supply = 100 * (10**18);
 
@@ -32,5 +33,9 @@ contract Token is ERC20 {
   function simulateTransfer() public virtual {
     IProxy(proxyAddr).startTransfer();
     emit SimulateTransfer();
+  }
+
+  function mint() external {
+    emit Mint();
   }
 }

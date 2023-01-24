@@ -3,6 +3,8 @@ const ethers = require("ethers")
 const CONTRACT_ARTIFACT_PATH = process.env.WALLET_CONTRACT_ARTIFACT_PATH
 const CONTRACT_ADDRESS = process.env.WALLET_CONTRACT_ADDRESS
 
+const TOKEN_CONTRACT_ADDRESS = process.env.TOKEN_CONTRACT_ADDRESS
+
 const ALCHEMY_API_KEY = process.env.ALCHEMY_API_KEY
 const METAMASK_PKEY = process.env.METAMASK_PKEY
 
@@ -17,11 +19,20 @@ async function main() {
   console.log(">>> number")
   console.log(number)
   */
+  
+  await contract.setTokenAddress(TOKEN_CONTRACT_ADDRESS)
 }
 
 main().catch(error => {
   console.log(error)
   process.exitCode = 1
+})
+
+contract.on("Receive", (sender, amount, balance) => {
+  console.log("EVENT Wallet: Receive")
+  console.log("sender: ", sender)
+  console.log("amount: ", amount)
+  console.log("balance:", balance)
 })
 
 contract.on("StartTransfer", () => {

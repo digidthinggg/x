@@ -5,13 +5,6 @@
   "abi": [
     {
       "inputs": [],
-      "name": "WTF",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "startTransfer",
       "outputs": [],
       "stateMutability": "nonpayable",
