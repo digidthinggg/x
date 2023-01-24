@@ -7,19 +7,6 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "./interfaces/IProxy.sol";
 
 contract Token is ERC20 {
-  event SimulateTransfer();
-  event Mint();
-
-  uint constant _initial_supply = 100 * (10**18);
-
-  constructor() ERC20("Token", "TKN") {
-    _mint(msg.sender, _initial_supply);
-  }
-
-  function getNumber() public virtual returns (int) {
-    return 1;
-  }
-
   address proxyAddr;
 
   function setProxyAddress(address _proxyAddr) public virtual {
@@ -30,12 +17,21 @@ contract Token is ERC20 {
     return proxyAddr;
   }
 
-  function simulateTransfer() public virtual {
-    IProxy(proxyAddr).startTransfer();
-    emit SimulateTransfer();
+  event Mint();
+  event MintAndSendToSender(address sender, uint256 amount);
+
+  uint constant _initial_supply = 100 * (10**18);
+
+  constructor() ERC20("Token", "TKN") {
+    _mint(msg.sender, _initial_supply);
   }
 
   function mint() external {
     emit Mint();
+  }
+
+  function mintAndSendToSender(address sender, uint256 amount) external {
+    _mint(sender, amount);
+    emit MintAndSendToSender(sender, amount);
   }
 }

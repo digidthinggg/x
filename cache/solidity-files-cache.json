@@ -1,9 +1,81 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
+    "/home/cabox/workspace/x/contracts/Proxy.sol": {
+      "lastModificationDate": 1674511383432,
+      "contentHash": "86d2848ee94320714b0649d32558cac8",
+      "sourceName": "contracts/Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IWallet.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "/home/cabox/workspace/x/contracts/interfaces/IWallet.sol": {
+      "lastModificationDate": 1674511328573,
+      "contentHash": "437a74a6e47daf37630592ec66604004",
+      "sourceName": "contracts/interfaces/IWallet.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "IWallet"
+      ]
+    },
     "/home/cabox/workspace/x/contracts/Token.sol": {
-      "lastModificationDate": 1674519902588,
-      "contentHash": "cb15109365b0d28e56817ba2d5691b18",
+      "lastModificationDate": 1674527280794,
+      "contentHash": "e547c35ae5c2b23267c03ea94bd61518",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -37,6 +109,41 @@
       ],
       "artifacts": [
         "Token"
+      ]
+    },
+    "/home/cabox/workspace/x/contracts/interfaces/IProxy.sol": {
+      "lastModificationDate": 1674511320469,
+      "contentHash": "6ea52767a3ef535d06754c584e63b6b3",
+      "sourceName": "contracts/interfaces/IProxy.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.7"
+      ],
+      "artifacts": [
+        "IProxy"
       ]
     },
     "/home/cabox/workspace/x/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
@@ -185,151 +292,9 @@
         "IERC20Metadata"
       ]
     },
-    "/home/cabox/workspace/x/contracts/Proxy.sol": {
-      "lastModificationDate": 1674511383432,
-      "contentHash": "86d2848ee94320714b0649d32558cac8",
-      "sourceName": "contracts/Proxy.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./interfaces/IWallet.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.7"
-      ],
-      "artifacts": [
-        "Proxy"
-      ]
-    },
-    "/home/cabox/workspace/x/contracts/interfaces/IProxy.sol": {
-      "lastModificationDate": 1674511320469,
-      "contentHash": "6ea52767a3ef535d06754c584e63b6b3",
-      "sourceName": "contracts/interfaces/IProxy.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.7"
-      ],
-      "artifacts": [
-        "IProxy"
-      ]
-    },
-    "/home/cabox/workspace/x/node_modules/hardhat/console.sol": {
-      "lastModificationDate": 1674490484684,
-      "contentHash": "4ff3cd2f6272c9a6516e9ee4f2b967d3",
-      "sourceName": "hardhat/console.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">= 0.4.22 <0.9.0"
-      ],
-      "artifacts": [
-        "console"
-      ]
-    },
-    "/home/cabox/workspace/x/contracts/interfaces/IWallet.sol": {
-      "lastModificationDate": 1674511328573,
-      "contentHash": "437a74a6e47daf37630592ec66604004",
-      "sourceName": "contracts/interfaces/IWallet.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.7"
-      ],
-      "artifacts": [
-        "IWallet"
-      ]
-    },
     "/home/cabox/workspace/x/contracts/Wallet.sol": {
-      "lastModificationDate": 1674519601875,
-      "contentHash": "dc4aa5d95175a24bb66f6983b15726f0",
+      "lastModificationDate": 1674527758845,
+      "contentHash": "fd761cefd0d7d1b45d38bb300cc89a33",
       "sourceName": "contracts/Wallet.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -365,8 +330,8 @@
       ]
     },
     "/home/cabox/workspace/x/contracts/interfaces/IToken.sol": {
-      "lastModificationDate": 1674517463420,
-      "contentHash": "3c967692e53e9dafb313c24754145763",
+      "lastModificationDate": 1674523659950,
+      "contentHash": "d2179ec5d1a342a491552c95f98ec326",
       "sourceName": "contracts/interfaces/IToken.sol",
       "solcConfig": {
         "version": "0.8.17",

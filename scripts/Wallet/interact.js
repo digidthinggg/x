@@ -14,12 +14,6 @@ const Contract = require(CONTRACT_ARTIFACT_PATH)
 const contract = new ethers.Contract(CONTRACT_ADDRESS, Contract.abi, signer)
 
 async function main() {
-  /*
-  const number = await contract.getNumber()
-  console.log(">>> number")
-  console.log(number)
-  */
-  
   await contract.setTokenAddress(TOKEN_CONTRACT_ADDRESS)
 }
 

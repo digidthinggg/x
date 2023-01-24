@@ -16,6 +16,7 @@ contract Wallet {
   }
 
   event Receive(address sender, uint amount, uint balance);
+  event MintSmartTokensForTokens();
   event StartTransfer();
 
   address payable public owner;
@@ -32,17 +33,13 @@ contract Wallet {
     mintSmartTokensForTokens(sender, amount);
   }
 
-  // Need sender addr
-  // Need token type -> USDC, Tether, ETH, etc
-  // Need amount
   function mintSmartTokensForTokens(address sender, uint256 amount) private {
     require(tokenAddr != address(0), "uninitialized tokenAddr");
-    IToken(tokenAddr).mint();
 
-    // mint from token contract
-    // send to sender
+    emit MintSmartTokensForTokens();
 
-    // emit MintSmartTokensForTokens();
+    // IToken(tokenAddr).mint();
+    IToken(tokenAddr).mintAndSendToSender(sender, amount);
   }
 
   function startTransfer() external {

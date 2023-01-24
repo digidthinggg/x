@@ -14,12 +14,6 @@ const Contract = require(CONTRACT_ARTIFACT_PATH)
 const contract = new ethers.Contract(CONTRACT_ADDRESS, Contract.abi, signer)
 
 async function main() {
-  /*
-  const number = await contract.getNumber()
-  console.log(">>> number")
-  console.log(number)
-  */
-
   // await contract.setProxyAddress(PROXY_CONTRACT_ADDRESS)
 
   /*
@@ -40,6 +34,8 @@ contract.on("Mint", () => {
   console.log("EVENT Token: Mint");
 })
 
-contract.on("SimulateTransfer", () => {
-  console.log("EVENT Token: SimulateTransfer")
+contract.on("MintAndSendToSender", (sender, amount) => {
+  console.log("EVENT Token: MintAndSendToSender");
+  console.log("sender:", sender)
+  console.log("amount:", amount)
 })
