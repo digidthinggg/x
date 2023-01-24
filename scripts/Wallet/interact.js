@@ -15,6 +15,8 @@ const contract = new ethers.Contract(CONTRACT_ADDRESS, Contract.abi, signer)
 
 async function main() {
   await contract.setTokenAddress(TOKEN_CONTRACT_ADDRESS)
+
+  await contract.startTransfer()
 }
 
 main().catch(error => {

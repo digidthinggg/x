@@ -21,6 +21,12 @@ contract Wallet {
 
   address payable public owner;
 
+  struct Transaction {
+    //
+  }
+
+  Transaction[] transactions;
+
   constructor() {
     owner = payable(msg.sender);
   }
