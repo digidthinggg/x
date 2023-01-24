@@ -109,8 +109,8 @@
       ]
     },
     "/home/cabox/workspace/sim0/contracts/Token.sol": {
-      "lastModificationDate": 1674564820815,
-      "contentHash": "867b8ac3a659c9b007e43fedd2359495",
+      "lastModificationDate": 1674592517923,
+      "contentHash": "6f51252d44d81c763b3229c27336ec16",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -329,8 +329,8 @@
       ]
     },
     "/home/cabox/workspace/sim0/contracts/Wallet.sol": {
-      "lastModificationDate": 1674565402498,
-      "contentHash": "6f3e2e37ff0e3367a41663ddfca39499",
+      "lastModificationDate": 1674585660807,
+      "contentHash": "7bb88b18d8e862159d5e7c17676c9187",
       "sourceName": "contracts/Wallet.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -366,8 +366,8 @@
       ]
     },
     "/home/cabox/workspace/sim0/contracts/interfaces/IToken.sol": {
-      "lastModificationDate": 1674559739168,
-      "contentHash": "d2179ec5d1a342a491552c95f98ec326",
+      "lastModificationDate": 1674585795947,
+      "contentHash": "2b3840efab9ef9192e92a93e6954d3f7",
       "sourceName": "contracts/interfaces/IToken.sol",
       "solcConfig": {
         "version": "0.8.17",

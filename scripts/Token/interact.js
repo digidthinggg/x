@@ -36,17 +36,17 @@ main().catch(error => {
 
 contract.on("Mint", (account, amount) => {
   console.log("EVENT Token: Mint");
-  console.log("address:", address)
+  console.log("account:", account)
   console.log("amount:", amount)
 })
 
-contract.on("Transfer", (receiver, amount) => {
+contract.on("TransferEv", (receiver, amount) => {
   console.log("EVENT Token: Transfer");
   console.log("receiver:", receiver)
   console.log("amount:", amount)
 })
 
-contract.on("TransferFrom", (sender, receiver, amount) => {
+contract.on("TransferFromEv", (sender, receiver, amount) => {
   console.log("EVENT Token: TransferFrom");
   console.log("sender:", sender)
   console.log("receiver:", receiver)

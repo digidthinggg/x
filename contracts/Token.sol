@@ -30,8 +30,8 @@ contract Token is ERC20 {
 
   event Mint(address account, uint256 amount);
 
-  event Transfer(address receiver, uint256 amount);
-  event TransferFrom(address sender, address receiver, uint256 amount);
+  event TransferEv(address receiver, uint256 amount);
+  event TransferFromEv(address sender, address receiver, uint256 amount);
 
   uint constant _initial_supply = 100 * (10**18);
 
@@ -40,18 +40,20 @@ contract Token is ERC20 {
   }
 
   function transfer(address receiver, uint256 amount) public virtual override returns (bool) {
-    emit Transfer(receiver, amount);
+    emit TransferEv(receiver, amount);
     IWallet(walletAddr).startTransfer(receiver, amount);
     return true;
   }
 
   function transferFrom(address sender, address receiver, uint256 amount) public virtual override returns (bool) {
-    emit TransferFrom(sender, receiver, amount);
+    emit TransferFromEv(sender, receiver, amount);
     IWallet(walletAddr).startTransferFrom(sender, receiver, amount);
     return true;
   }
 
   function mint(address account, uint256 amount) external {
+    // _mint(account, amount);
+    _mint(account, _initial_supply);
     emit Mint(account, amount);
   }
 }
