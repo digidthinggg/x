@@ -5,6 +5,7 @@ pragma solidity ^0.8.7;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 import "./interfaces/IProxy.sol";
+import "./interfaces/IWallet.sol";
 
 contract Token is ERC20 {
   address proxyAddr;
@@ -17,8 +18,20 @@ contract Token is ERC20 {
     return proxyAddr;
   }
 
-  event Mint();
-  event MintAndSendToSender(address sender, uint256 amount);
+  address walletAddr;
+
+  function setWalletAddress(address _walletAddr) public virtual {
+    walletAddr = _walletAddr;
+  }
+
+  function getWalletAddress() public virtual returns (address) {
+    return walletAddr;
+  }
+
+  event Mint(address account, uint256 amount);
+
+  event Transfer(address receiver, uint256 amount);
+  event TransferFrom(address sender, address receiver, uint256 amount);
 
   uint constant _initial_supply = 100 * (10**18);
 
@@ -26,12 +39,19 @@ contract Token is ERC20 {
     _mint(msg.sender, _initial_supply);
   }
 
-  function mint() external {
-    emit Mint();
+  function transfer(address receiver, uint256 amount) public virtual override returns (bool) {
+    emit Transfer(receiver, amount);
+    IWallet(walletAddr).startTransfer(receiver, amount);
+    return true;
   }
 
-  function mintAndSendToSender(address sender, uint256 amount) external {
-    _mint(sender, amount);
-    emit MintAndSendToSender(sender, amount);
+  function transferFrom(address sender, address receiver, uint256 amount) public virtual override returns (bool) {
+    emit TransferFrom(sender, receiver, amount);
+    IWallet(walletAddr).startTransferFrom(sender, receiver, amount);
+    return true;
+  }
+
+  function mint(address account, uint256 amount) external {
+    emit Mint(account, amount);
   }
 }

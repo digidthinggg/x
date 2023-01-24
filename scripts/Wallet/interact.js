@@ -16,7 +16,7 @@ const contract = new ethers.Contract(CONTRACT_ADDRESS, Contract.abi, signer)
 async function main() {
   await contract.setTokenAddress(TOKEN_CONTRACT_ADDRESS)
 
-  await contract.startTransfer()
+  // await contract.startTransfer()
 }
 
 main().catch(error => {
@@ -31,6 +31,19 @@ contract.on("Receive", (sender, amount, balance) => {
   console.log("balance:", balance)
 })
 
-contract.on("StartTransfer", () => {
+contract.on("MintSmartTokensForTokens", () => {
+  console.log("EVENT Wallet: MintSmartTokensForTokens")
+})
+
+contract.on("StartTransfer", (receiver, amount) => {
   console.log("EVENT Wallet: StartTransfer")
+  console.log("receiver:", receiver)
+  console.log("amount:", amount)
+})
+
+contract.on("StartTransferFrom", (sender, receiver, amount) => {
+  console.log("EVENT Wallet: StartTransferFrom")
+  console.log("sender:", sender)
+  console.log("receiver:", receiver)
+  console.log("amount:", amount)
 })

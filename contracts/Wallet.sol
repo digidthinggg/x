@@ -17,15 +17,11 @@ contract Wallet {
 
   event Receive(address sender, uint amount, uint balance);
   event MintSmartTokensForTokens();
-  event StartTransfer();
+
+  event StartTransfer(address receiver, uint256 amount);
+  event StartTransferFrom(address sender, address receiver, uint256 amount);
 
   address payable public owner;
-
-  struct Transaction {
-    //
-  }
-
-  Transaction[] transactions;
 
   constructor() {
     owner = payable(msg.sender);
@@ -44,11 +40,15 @@ contract Wallet {
 
     emit MintSmartTokensForTokens();
 
-    // IToken(tokenAddr).mint();
-    IToken(tokenAddr).mintAndSendToSender(sender, amount);
+    IToken(tokenAddr).mint(sender, amount);
+    // IToken(tokenAddr).mintAndSendToSender(sender, amount);
   }
 
-  function startTransfer() external {
-    emit StartTransfer();
+  function startTransfer(address receiver, uint256 amount) external {
+    emit StartTransfer(receiver, amount);
+  }
+
+  function startTransferFrom(address sender, address receiver, uint256 amount) external {
+    emit StartTransferFrom(sender, receiver, amount);
   }
 }

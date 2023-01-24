@@ -22,7 +22,7 @@ contract Proxy {
   }
 
   function startTransfer() external {
-    IWallet(walletAddr).startTransfer();
-    emit StartTransfer();
+    //IWallet(walletAddr).startTransfer();
+    //emit StartTransfer();
   }
 }
